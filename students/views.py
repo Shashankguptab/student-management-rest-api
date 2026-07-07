@@ -18,7 +18,7 @@ class StudentViewSet(viewsets.ModelViewSet):
     # permission_classes = [permissions.IsAdminUser]######Only admin
 
     #professional way from permissions.py
-    permission_classes = [IsAdminOrReadOnly]
+    # permission_classes = [IsAdminOrReadOnly]
 
     filter_backends=[
         DjangoFilterBackend,

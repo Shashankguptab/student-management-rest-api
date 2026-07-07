@@ -17,7 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework.authtoken.views import obtain_auth_token
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("""
+    <h1>Student Management REST API</h1>
+    <p>API is running successfully</p>
+    <a href="/api/students/">Students API</a>
+    """)
+
 urlpatterns = [
+    path('', home),
     path('admin/', admin.site.urls),
     path('api/',include('students.urls')),
     path('api-token-auth/', obtain_auth_token),
